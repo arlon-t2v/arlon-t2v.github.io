@@ -9,17 +9,22 @@
 <meta charset="UTF-8">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <!-- <title></title>   -->
-<style>  
-        .container {  
-            display: flex;  
-            flex-wrap: wrap;  
-            gap: 50x; /* 调整视频之间的间隙 */  
-        }  
-  
-        /* .row {  
-            display: flex;  
-            width: 100%;  
-            align-items: center;  
+<style>
+        .caption {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50x; /* 调整视频之间的间隙 */
+        }
+
+        /* .row {
+            display: flex;
+            width: 100%;
+            align-items: center;
         }   */
   
         .row {  
@@ -34,6 +39,9 @@
             justify-content: center; /* 水平居中 */  
         }  
 
+        .row3 {  
+            display: flex;  
+        }  
         .column {  
             display: flex;  
             flex-direction: column;  
@@ -69,6 +77,59 @@
             margin-top: 10px; /* 调整视频上下间隙 */  
             margin-bottom: 10px; /* 调整视频上下间隙 */  
         } 
+
+        /* .video-column, .text-column {  
+            flex: 1;  
+            text-align: center;  
+            margin: 5px;  
+        }   */
+        .text-wrapper {  
+            display: flex;  
+            justify-content: space-between;  
+            flex-wrap: wrap;  
+            gap: 10px; /* Optional: Adds space between columns */  
+            margin-left: 20px; /* Adjust this value to set the left margin */  
+        }  
+        .text-column {  
+            flex: 1;  
+            width: 210px; /* Adjust based on your preference */  
+            padding-left: 30px;  
+            box-sizing: border-box;  
+        }  
+        .text-column2 {  
+            flex: 1;  
+            width: 210px; /* Adjust based on your preference */  
+            /* padding: 30px;   */
+            padding-left: 70px;
+            box-sizing: border-box;  
+        }  
+        .text-column3 {  
+            flex: 1;  
+            width: 210px; /* Adjust based on your preference */  
+            /* padding: 30px;   */
+            padding-left:70px;
+            box-sizing: border-box;  
+        }  
+        .text-column_line {  
+            flex: 1;  
+            /* padding: 30px;   */
+            padding-left: 30px;
+            box-sizing: border-box;  
+        }  
+        .text-column-ref1 {  
+            flex: 1;  
+            /* padding: 30px;   */
+            width: 50px; /* Adjust based on your preference */  
+            padding-left: 400px;
+            box-sizing: border-box;  
+        }  
+        .text-column-ref2 {  
+            flex: 1;  
+            /* padding: 30px;   */
+            width: 50px; /* Adjust based on your preference */  
+            padding-left: 10px;
+            box-sizing: border-box;  
+        }  
 </style>  
 </head>
 
@@ -111,18 +172,33 @@
             <video controls src="./arlon/sample_0073_baseline.mp4"></video>  
             <video controls src="./arlon/sample_0007_baseline.mp4"></video>  
             <video controls src="./arlon/sample_0026_baseline.mp4"></video>  
-        </div>  
-    </div>  
+        </div>
+    </div>
+    <div class="row">
+        <div class="label">ours</div>
+        <div class="video-wrapper">
+            <video controls src="./arlon/sample_0005.mp4"></video>
+            <video controls src="./arlon/sample_0073.mp4"></video>
+            <video controls src="./arlon/sample_0007.mp4"></video>
+            <video controls src="./arlon/sample_0026.mp4"></video>
+        </div>
+    </div>
     <div class="row">  
-        <div class="label">ours</div>  
-        <div class="video-wrapper">  
-            <video controls src="./arlon/sample_0005.mp4"></video>  
-            <video controls src="./arlon/sample_0073.mp4"></video>  
-            <video controls src="./arlon/sample_0007.mp4"></video>  
-            <video controls src="./arlon/sample_0026.mp4"></video>  
+        <div class="text-column">  
+            "A high-quality 3D render of a female character with curly blonde hair and striking blue eyes, wearing a black tank top, standing before a dramatic, fiery backdrop, with a serious expression and detailed, realistic lighting."
         </div>  
-    </div>  
-</div>  
+        <div class="text-column2">  
+            "A cute happy Corgi playing in park, sunset"
+        </div>  
+        <div class="text-column3">  
+            "A tranquil coastal beach in spring with golden sands and lush green cliffs is suddenly disrupted by intense shaking, turning rhythmic waves chaotic, creating a surreal visual experience"
+        </div>  
+        <div class="text-column2">  
+            "Misty mountains at sunrise, with the sun casting a warm glow. Dense fog adds mystery, while a calm river winds through the scene. Cool colors contrast with the warm light. The video focuses on the untouched natural beauty, free of text or human activity."  
+        </div>  
+    </div>
+
+</div>
 
 
 <div class="content video-container">  
@@ -131,25 +207,28 @@
     <div class="column">  
         <div class="label_method">StreamingT2V</div>  
         <video controls src="./arlon/st2v_22.mp4"></video>  
-    </div>  
-    <div class="column">  
-        <div class="label_method">FreeNoise</div>  
-        <video controls src="./arlon/free_noise_22.mp4"></video>  
-    </div>  
-    <div class="column">  
-        <div class="label_method">OpenSora</div>  
-        <video controls src="./arlon/baseline_22.mp4"></video>  
-    </div>  
-    <div class="column">  
-      <div class="label_method">ARLON</div>  
-      <video controls src="./arlon/sample_0022_1.mp4"></video>  
-  </div>  
+    </div>
+    <div class="column">
+        <div class="label_method">FreeNoise</div>
+        <video controls src="./arlon/free_noise_22.mp4"></video>
+    </div>
+    <div class="column">
+        <div class="label_method">OpenSora</div>
+        <video controls src="./arlon/baseline_22.mp4"></video>
+    </div>
+    <div class="column">
+      <div class="label_method">ARLON</div>
+      <video controls src="./arlon/sample_0022_1.mp4"></video>
+  </div>
+</div>
+<div class="text-column_line">  
+    "A teddy bear is swimming in the ocean."  
 </div>  
 <div class="row2 video-wrapper">  
-    <div class="column">  
-        <video controls src="./arlon/aquarium_st2v.mp4"></video>  
-    </div>  
-    <div class="column">  
+    <div class="column">
+        <video controls src="./arlon/aquarium_st2v.mp4"></video>
+    </div>
+    <div class="column">
         <video controls src="./arlon/free_noise0003.mp4"></video>  
     </div>  
     <div class="column">  
@@ -158,18 +237,20 @@
     <div class="column">  
       <video controls src="./arlon/aquarium-0.mp4"></video>  
   </div>  
+</div>
+<div class="text-column_line">  
+"In a mesmerizing underwater world, vibrant coral reefs teem with life, their colors ranging from deep purples to bright oranges. Schools of tropical fish, including angelfish, clownfish, and tangs, dart gracefully through the water, their scales shimmering in the filtered sunlight"
 </div>  
-</div>  
-
+</div>
 
 
 
 <div class="content video-container">  
   <h2 style="text-align:center;">Progressive Prompts Results</h2>
-  <div class="row2 video-wrapper">  
+  <div class="row2 video-wrapper">
     <div class="column">  
-        <div class="label_method">StreamingT2V</div>  
-        <video controls src="./arlon/st2v2_2.mp4"></video>  
+        <div class="label_method">StreamingT2V</div>
+        <video controls src="./arlon/st2v2_2.mp4"></video>
     </div>  
     <div class="column">  
         <div class="label_method">FreeNoise</div>  
@@ -184,6 +265,14 @@
       <video controls src="./arlon/sample_0001.mp4"></video>  
   </div>  
 </div>
+<div class="text-column_line">  
+Prompt1: "A majestic dormant volcano rises in the center of a tranquil landscape, with its rugged slopes contrasting the lush forest below, set against clear skies and rolling hills, evoking a sense of solitude and timeless serenity."
+</div>  
+
+<div class="text-column_line">  
+Prompt2: "An erupting volcano dominates the scene, with fiery lava and ash contrasting the lush forest below, as dark clouds and lightning fill the sky,  capturing the chaos and power of nature's fury"
+</div>  
+
     <!-- <div class="row">  
         <div class="label">ours</div>  
         <div class="video-wrapper">  
@@ -216,7 +305,17 @@
       <div class="label_method">Generated Video2</div>  
       <video controls src="./arlon/Media3.mp4"></video>  
   </div>  
-</div>  
+
+</div> 
+<div class="row3">  
+    <div class="text-column-ref1">  
+        "A bearded man with short hair, wearing sunglasses and a black leather jacket with red lining, looks upwards seriously in a close-up portrait against a green-to-blue gradient background, suggesting nighttime."
+    </div>  
+    <div class="text-column-ref2">  
+        "A high-quality 3D render of a female character with curly blonde hair and striking blue eyes, wearing a black tank top, standing before a dramatic, fiery backdrop, with a serious expression and detailed, realistic lighting."
+    </div>  
+  </div>
+
 
 <!-- 
 <div class="content video-container">  
